@@ -1,0 +1,29 @@
+{
+  "name": "reborn",
+  "version": "0.0.1",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dracupid/reborn.git"
+  },
+  "author": "Dracupid Zhao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dracupid/reborn/issues"
+  },
+  "homepage": "https://github.com/dracupid/reborn",
+  "keywords": [
+    "directory",
+    "generator",
+    "structure"
+  ],
+  "dependencies": {
+    "nokit": "^0.2.8"
+  }
+}
