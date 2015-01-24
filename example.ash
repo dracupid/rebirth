@@ -1,5 +1,7 @@
-# tab = 4
-# extAsFile = false
+#!/usr/bin/env node
+
+$tab = 4
+$extAsFile = true
 
 testDir
 	gulpfile.coffee
@@ -11,3 +13,10 @@ testDir
 		css
 			main.css
 			share.css
+
+
+```
+cd testDir
+echo $PATH
+git init
+```

@@ -21,19 +21,25 @@ class Parser
     constructor: (@options = {})->
         _.defaults @options, defaultOptions
         @dirTree = new Tree new TreeNode @options.cwd, 0
+        @hook = ''
 
     isOption: (l)->
-        /^#+[\w\d]+=[\w\d]+$/.test l.replace /\s|;/g, ''
+        /^\$[\w_]+=[\w_-]+$/.test l.trim().replace /\s|;/g, ''
 
     isComment: (l)->
         l.trim()[0] is '#'
 
     parseOption: (l)->
-        kv = (@isOption(l) and l.replace(/\s|;/g, '')[1...].split '=')
+        kv = l.replace(/\s|;/g, '')[1...].split '='
         if kv and kv[1]
             if /^true|yes$/i.test kv[1] then kv[1] = yes
             if /^false|no$/i.test kv[1] then kv[1] = no
         kv
+
+    getHook: (ash)->
+        ash.replace /```([^`]*)```/g , (_, group)=>
+            @hook = group or ''
+            ''
 
     isDir: (p)->
         p = p.trim()
@@ -60,15 +66,20 @@ class Parser
         node
 
     parseLine: (l, lineNum)->
-        if not l then return
-        if @isComment l
+        if not l or @isComment l
+            return
+        if @isOption l
             [k, v] = @parseOption l
+
+            if not @options.hasOwnProperty k
+                kit.log "WARNING: ".yellow + "useless option: #{k.red}"
+
             @options[k] = v
         else
             @parseStruc l, lineNum + 1
 
     parse: (str)->
-        str.split('\n').forEach (line, index)=>
+        @getHook(str).split('\n').forEach (line, index)=>
             @parseLine line, index
         @dirTree
 

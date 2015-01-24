@@ -3,8 +3,8 @@
 global.opts =
 	extAsFile: false
 
-bornFromFile 'a.cson'
+bornFromFile 'example.ash'
 .then (cso)->
 	console.log 'DONE'
 .catch (e)->
-	console.error e.stack
+	console.error e
