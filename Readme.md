@@ -54,8 +54,10 @@ rebirth myproject.ash newProject
     - `rebirth -> ../libs/node_modules/rebirth/bin/cli.js`
 - Define file contants with an url
     - `.gitignore = https://raw.githubusercontent.com/dracupid/rebirth/master/.gitignore`
-- Define directory or file contents with a local path
+- Define a directory or file contents with a local path
     - `js/ = ../js`
+- Define a directory with git
+    - `npm-up = https://github.com/dracupid/npm-up.git`
 - Define file contants with a string or cli's stdout
     - `a.js < cd .. && ls . | grep js`. *Hmm.., this is not a good example.*
 - Force overwrite or not
