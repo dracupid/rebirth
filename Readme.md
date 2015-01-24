@@ -58,4 +58,7 @@ rebirth myproject.ash newProject
     - `js/ = ../js`
 - Define file contants with a string or cli's stdout
     - `a.js < cd .. && ls . | grep js`. *Hmm.., this is not a good example.*
+- Force overwrite or not
+    - `+a.js` force overwrite origin file
+    - `?a.js` preserve origin file.
 

@@ -9,6 +9,7 @@ defaultOptions =
     tab: 4
     indent: 4
     baseDir: process.cwd()
+    overwrite: false
 
 set = (opt, value)->
     if arguments.length is 1 and _.isObject opt
