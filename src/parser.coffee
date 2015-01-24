@@ -30,7 +30,7 @@ class Parser
         l.trim()[0] is '#'
 
     parseOption: (l)->
-        kv = l.replace(/\s|;/g, '')[1...].split '='
+        kv = l.replace(/\s|;|'|"/g, '')[1...].split '='
         if kv and kv[1]
             if /^true|yes$/i.test kv[1] then kv[1] = yes
             if /^false|no$/i.test kv[1] then kv[1] = no
