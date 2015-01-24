@@ -14,7 +14,7 @@ born = (str, opts)->
 	dirTree = parser.parse str
 	make dirTree.root
 	.then ->
-		process.chdir parser.options.cwd
+		process.chdir parser.options.baseDir
 		kit.log "Start to execute hook: ".green
 		kit.exec parser.hook
 	.then ({stdout})->

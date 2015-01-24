@@ -8,7 +8,7 @@ defaultOptions =
     extAsFile: false
     tab: 4
     indent: 4
-    cwd: process.cwd()
+    baseDir: process.cwd()
 
 set = (opt, value)->
     if arguments.length is 1 and _.isObject opt
@@ -20,7 +20,7 @@ set = (opt, value)->
 class Parser
     constructor: (@options = {})->
         _.defaults @options, defaultOptions
-        @dirTree = new Tree new TreeNode @options.cwd, 0
+        @dirTree = new Tree new TreeNode @options.baseDir, 0
         @hook = ''
 
     isOption: (l)->
