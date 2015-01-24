@@ -3,7 +3,7 @@ rebirth
 Generate a directory structure by a __ash__ file.
 
 ## ash file
-A directory structure specification. It is all of the magic.  
+A directory structure specification. It is all of the magic.
 An ash file contains three parts:
 
 #### Define Options
@@ -31,9 +31,9 @@ gulpfile.js
 #### Define hook
 After creating the directories, you may want to do something else.
 ```
-\```
-git init
-\```
+ ```
+ git init
+ ```
 ```
 
 ### API
@@ -45,15 +45,17 @@ git init
 ### CLI Usage
 TODO
 ```bash
-rebirth myproject.ash
+rebirth myproject.ash newProject
 ```
 
 ## Roadmap
 - CLI
 - Support soft link
     - `rebirth -> ../libs/node_modules/rebirth/bin/cli.js`
-- Define file contants with an url or a local path
+- Define file contants with an url
     - `.gitignore = https://raw.githubusercontent.com/dracupid/rebirth/master/.gitignore`
+- Define directory or file contents with a local path
+    - `js/ = ../js`
 - Define file contants with a string or cli's stdout
     - `a.js < cd .. && ls . | grep js`. *Hmm.., this is not a good example.*
 
