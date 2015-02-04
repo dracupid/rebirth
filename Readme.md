@@ -31,9 +31,9 @@ gulpfile.js
 #### Define hook
 After creating the directories, you may want to do something else.
 ```
-\```
-git init
-\```
+    ```
+    git init
+    ```
 ```
 
 ### API

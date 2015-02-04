@@ -24,7 +24,7 @@
     "structure"
   ],
   "dependencies": {
-    "coffee-script": "^1.8.0",
-    "nokit": "^0.2.8"
+    "coffee-script": "^1.9.0",
+    "nokit": "^0.4.1"
   }
 }
